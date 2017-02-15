@@ -7,6 +7,8 @@ call plug#begin('~/.vim/plugged')
  Plug 'vim-syntastic/syntastic'
  Plug 'kien/ctrlp.vim'
  Plug 'ntpeters/vim-better-whitespace'
+ Plug 'scrooloose/nerdcommenter'
+ Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -28,6 +30,7 @@ set wrap
 set expandtab
 set smartindent
 set fileformat=unix
+set t_Co=256
 
 set scroll=15
 let mapleader = ","
@@ -50,7 +53,9 @@ autocmd BufWritePre * StripWhitespace
 
 "******** Mappings *********
 
-map <C-n> :NERDTreeTabsToggle<CR>
-map <leader>nn :set number!<CR>
-map <leader>nr :set relativenumber!<CR>
+nmap <C-n> :NERDTreeTabsToggle<CR>
+nmap <leader>nn :set number!<CR>
+nmap <leader>nr :set relativenumber!<CR>
+nmap <leader>c :let @/= ""<CR>
+nmap <leader>i :set paste!<CR>
 
