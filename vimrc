@@ -9,6 +9,8 @@ call plug#begin('~/.vim/plugged')
  Plug 'ntpeters/vim-better-whitespace'
  Plug 'scrooloose/nerdcommenter'
  Plug 'easymotion/vim-easymotion'
+ Plug 'jiangmiao/auto-pairs'
+ Plug 'mileszs/ack.vim'
 
 call plug#end()
 
@@ -48,6 +50,7 @@ set ruler
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 autocmd BufWritePre * StripWhitespace
 
