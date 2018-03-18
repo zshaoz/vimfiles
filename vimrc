@@ -1,3 +1,4 @@
+
 "******** Plugins *********
 
 call plug#begin('~/.vim/plugged')
@@ -33,6 +34,7 @@ set expandtab
 set smartindent
 set fileformat=unix
 set t_Co=256
+set termguicolors
 
 set scroll=15
 let mapleader = ","
@@ -46,6 +48,9 @@ set laststatus=2                                                    " Always dis
 set showtabline=2                                                   " Always display the tabline, even if there is only one tab
 set hlsearch
 set ruler
+set colorcolumn=120
+set hidden
+set history=100
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
