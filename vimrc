@@ -33,8 +33,12 @@ set wrap
 set expandtab
 set smartindent
 set fileformat=unix
-set t_Co=256
 set termguicolors
+set t_Co=256
+"let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+"let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+set termguicolors
+set term=xterm-256color
 
 set scroll=15
 let mapleader = ","
@@ -51,12 +55,6 @@ set ruler
 set colorcolumn=120
 set hidden
 set history=100
-if &term =~ '256color'
-  " disable Background Color Erase (BCE) so that color schemes
-  " render properly when inside 256-color tmux and GNU screen.
-  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
