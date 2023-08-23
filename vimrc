@@ -5,13 +5,15 @@ call plug#begin('~/.vim/plugged')
 
  Plug 'scrooloose/nerdtree'
  Plug 'jistr/vim-nerdtree-tabs'
- Plug 'vim-syntastic/syntastic'
  Plug 'kien/ctrlp.vim'
  Plug 'ntpeters/vim-better-whitespace'
  Plug 'scrooloose/nerdcommenter'
  Plug 'easymotion/vim-easymotion'
  Plug 'jiangmiao/auto-pairs'
  Plug 'mileszs/ack.vim'
+ Plug 'tpope/vim-surround'
+ Plug 'pangloss/vim-javascript'
+ Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -63,6 +65,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 autocmd BufWritePre * StripWhitespace
 
+autocmd Filetype sql setlocal shiftwidth=2 softtabstop=2 expandtab
+
 "******** Mappings *********
 
 nmap <C-n> :NERDTreeTabsToggle<CR>
@@ -70,4 +74,8 @@ nmap <leader>nn :set number!<CR>
 nmap <leader>nr :set relativenumber!<CR>
 nmap <leader>c :let @/= ""<CR>
 nmap <leader>i :set paste!<CR>
+
+"Tab 2 spaces when file type is .html, .html, .js or .jsx
+autocmd BufRead,BufNewFile *.htm,*.html,*.js,*.jsx setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
 
